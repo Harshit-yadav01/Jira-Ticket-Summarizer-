@@ -1,0 +1,22 @@
+services:
+  request-lens:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      DATABASE_PATH: /data/request-lens.sqlite3
+      APP_VIEWER_API_KEY: ${APP_VIEWER_API_KEY:-}
+      APP_ANALYST_API_KEY: ${APP_ANALYST_API_KEY:-}
+      APP_API_KEY: ${APP_API_KEY:-}
+      JIRA_BASE_URL: ${JIRA_BASE_URL:-}
+      JIRA_EMAIL: ${JIRA_EMAIL:-}
+      JIRA_API_TOKEN: ${JIRA_API_TOKEN:-}
+      JIRA_PROJECT_KEY: ${JIRA_PROJECT_KEY:-}
+      JIRA_SYNC_INTERVAL_MINUTES: ${JIRA_SYNC_INTERVAL_MINUTES:-0}
+      HPE_SEARCH_API_URL: ${HPE_SEARCH_API_URL:-}
+      HPE_SEARCH_API_KEY: ${HPE_SEARCH_API_KEY:-}
+    volumes:
+      - request-data:/data
+
+volumes:
+  request-data:

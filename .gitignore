@@ -1,0 +1,12 @@
+.env
+.venv/
+backend/.venv/
+backend/data.sqlite3
+backend/__pycache__/
+backend/app/__pycache__/
+backend/tests/__pycache__/
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+*.py[cod]
+.DS_Store
